@@ -17,18 +17,29 @@ Las técnicas y tecnologías utilizadas son:
 - Uso del framework LangChain  
 - Cadenas simples  
 - Agente orquestador  
-- Agente como herramientas  
+- Agente como herramientas
 
-## 🛠️ Abrir y ejecutar el proyecto
+## 📋 Prerrequisitos
+Antes de empezar, asegúrate de tener instalado:
+- [Python 3.10 o superior](https://www.python.org/downloads/)
+- [Git](https://git-scm.com/)
+- Una API Key de [Cohere](https://dashboard.cohere.com/api-keys)
 
-Después de descargar el proyecto, puedes abrirlo con Visual Studio Code. A continuación, es necesario preparar tu entorno. Para ello:
+## 🚀 Paso a paso para ejecutarlo en tu máquina
+
+### 1. Clonar el repositorio
+Abre tu terminal y ejecuta:
+```bash
+git clone https://github.com/TU_USUARIO/nombre-del-repo.git
+cd nombre-del-repo
+```
 
 ### venv en Windows:
-
+Esto aísla las dependencias del proyecto.
 ```bash
 python -m venv .venv-gemini-3
 .\.venv-gemini-3\Scripts\activate
-````
+```
 
 ### venv en Mac/Linux:
 
@@ -37,15 +48,18 @@ python3 -m venv .venv-gemini-3
 source .venv-gemini-3/bin/activate
 ```
 
-Después, instala los paquetes utilizando:
+Después, instala los paquetes/dependencias utilizando:
 
 ```bash
 pip install -r requirements.txt
 ```
 
 ## 🔑 Generar API\_KEYs y asociarlas al archivo .env
+Crea un archivo llamado .env en la raíz del proyecto (al mismo nivel que requirements.txt) y añade tu clave:
 
 ```python
 GEMINI_API_KEY = "TU_API_KEY_AQUÍ"
 COHERE_API_KEY = "TU_API_KEY_AQUÍ"
 ```
+⚠️ Advertencia: El archivo .env ya está incluido en .gitignore, por lo que no se subirá a GitHub.
+
