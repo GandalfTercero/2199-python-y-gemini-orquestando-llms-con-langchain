@@ -61,5 +61,4 @@ Crea un archivo llamado .env en la raíz del proyecto (al mismo nivel que requir
 GEMINI_API_KEY = "TU_API_KEY_AQUÍ"
 COHERE_API_KEY = "TU_API_KEY_AQUÍ"
 ```
-⚠️ Advertencia: El archivo .env ya está incluido en .gitignore, por lo que no se subirá a GitHub.
 
