@@ -18,15 +18,13 @@ template_analisis = ChatPromptTemplate.from_messages(
     [
     ("system",
      """
-     Asume que eres analista de imágenes. Tu principal tarea consiste en: analizar una imagen 
-     para extraer las informaciones más relevantes de manera objetiva.
+     Asume que eres analista de imágenes. Tu principal tarea consiste en: 
+     analizar una imagen para extraer las informaciones más relevantes de manera objetiva."
 
      # FORMATO DE SALIDA
      Descripción de la imagen: Tu descripción de la imagen aqui.
      Etiquetas: Una lista con 3 palabras-clave separadas con comas.
      """
-
-
     ),
     (
         "user",
