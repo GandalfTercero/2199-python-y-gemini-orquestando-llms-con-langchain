@@ -1,0 +1,32 @@
+import langchain
+langchain.debug = False
+
+from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_core.messages import HumanMessage
+from my_models import GEMINI_FLASH
+from my_keys import GEMINI_API_KEY
+from langchain import hub
+from langchain.agents import create_react_agent
+from langchain_core.tools import Tool
+from herramientas_analisis_imagen import HerramientaAnalisisImagen
+
+class AgenteOrquestador:
+    def __init__(self):
+        self.llm = ChatGoogleGenerativeAI(
+            api_key=GEMINI_API_KEY,
+            model=GEMINI_FLASH
+        )
+
+        herramienta_analisis_imagen = HerramientaAnalisisImagen()
+        self.tools = [
+            Tool(
+                name=herramienta_analisis_imagen.name,
+                func=herramienta_analisis_imagen.run,
+                description=herramienta_analisis_imagen.description,
+                return_direct=herramienta_analisis_imagen.return_direct
+            )
+        ]
+
+        prompt = hub.pull("hwchase17/react")
+
+        self.agente = create_react_agent(self.llm, self.tools, prompt)
