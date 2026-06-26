@@ -10,7 +10,7 @@ def main():
         verbose=True
     )
 
-    pregunta = "Realiza el análisis de la imagen ejemplo_grafico.jpg"
+    pregunta = "Quiero que me expliques cómo funcionan los desvíos condicionales"
     
     print("Esperando 60 segundos para respetar el límite de cuota...")
     time.sleep(60)  # ← aquí
